@@ -3,9 +3,11 @@ import {Box, Stack, Typography} from "@mui/material";
 import CheckboxElem from "../../CheckboxElem";
 import {toggleCompletedTask, removeTask} from "../../../store/tasks/slice";
 import {useAppDispatch} from "../../../store/hook";
+import {TaskItem} from "../../../store/tasks/model";
 import Cross from "../../../assets/icon/Cross";
 
-const TodoItem = (props) => {
+interface ITodoItem extends TaskItem {}
+const TodoItem = (props: ITodoItem) => {
     const {id, text, completed} = props
 
     const dispatch = useAppDispatch()
